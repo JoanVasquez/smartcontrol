@@ -87,6 +87,7 @@
             btnExist.TabIndex = 5;
             btnExist.Text = "Salir";
             btnExist.UseVisualStyleBackColor = true;
+            btnExist.Click += btnExist_Click;
             // 
             // Form1
             // 

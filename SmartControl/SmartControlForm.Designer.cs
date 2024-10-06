@@ -33,7 +33,6 @@
             cbTransactionType = new ComboBox();
             txtAmount = new TextBox();
             txtDescription = new TextBox();
-            dtpTransaction = new DateTimePicker();
             btnAdd = new Button();
             lblCategory = new Label();
             lblAmount = new Label();
@@ -44,14 +43,15 @@
             txtIncome = new TextBox();
             txtTotalBills = new TextBox();
             txtBalance = new TextBox();
-            dataGridView1 = new DataGridView();
+            dgvTransactions = new DataGridView();
             dtpStartDateFilter = new DateTimePicker();
             dtpEndDatePicker = new DateTimePicker();
             btnFilter = new Button();
             lblStartDateFilter = new Label();
             lblEndDateFilter = new Label();
             lblLatestTransactions = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            btnCleanFilter = new Button();
+            ((System.ComponentModel.ISupportInitialize)dgvTransactions).BeginInit();
             SuspendLayout();
             // 
             // lblTransactionType
@@ -93,16 +93,9 @@
             txtDescription.Size = new Size(200, 23);
             txtDescription.TabIndex = 4;
             // 
-            // dtpTransaction
-            // 
-            dtpTransaction.Location = new Point(435, 9);
-            dtpTransaction.Name = "dtpTransaction";
-            dtpTransaction.Size = new Size(200, 23);
-            dtpTransaction.TabIndex = 5;
-            // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(435, 52);
+            btnAdd.Location = new Point(399, 4);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(200, 30);
             btnAdd.TabIndex = 6;
@@ -187,13 +180,13 @@
             txtBalance.Size = new Size(164, 23);
             txtBalance.TabIndex = 15;
             // 
-            // dataGridView1
+            // dgvTransactions
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 283);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(776, 150);
-            dataGridView1.TabIndex = 16;
+            dgvTransactions.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvTransactions.Location = new Point(12, 283);
+            dgvTransactions.Name = "dgvTransactions";
+            dgvTransactions.Size = new Size(776, 150);
+            dgvTransactions.TabIndex = 16;
             // 
             // dtpStartDateFilter
             // 
@@ -217,6 +210,7 @@
             btnFilter.TabIndex = 19;
             btnFilter.Text = "Filtrar";
             btnFilter.UseVisualStyleBackColor = true;
+            btnFilter.Click += btnFilter_Click;
             // 
             // lblStartDateFilter
             // 
@@ -245,18 +239,29 @@
             lblLatestTransactions.TabIndex = 22;
             lblLatestTransactions.Text = "Ultimas transacciones";
             // 
+            // btnCleanFilter
+            // 
+            btnCleanFilter.Location = new Point(505, 479);
+            btnCleanFilter.Name = "btnCleanFilter";
+            btnCleanFilter.Size = new Size(120, 23);
+            btnCleanFilter.TabIndex = 23;
+            btnCleanFilter.Text = "Limpiar Filtro";
+            btnCleanFilter.UseVisualStyleBackColor = true;
+            btnCleanFilter.Click += btnCleanFilter_Click;
+            // 
             // SmartControlForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 514);
+            Controls.Add(btnCleanFilter);
             Controls.Add(lblLatestTransactions);
             Controls.Add(lblEndDateFilter);
             Controls.Add(lblStartDateFilter);
             Controls.Add(btnFilter);
             Controls.Add(dtpEndDatePicker);
             Controls.Add(dtpStartDateFilter);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvTransactions);
             Controls.Add(txtBalance);
             Controls.Add(txtTotalBills);
             Controls.Add(txtIncome);
@@ -271,11 +276,10 @@
             Controls.Add(cbTransactionType);
             Controls.Add(txtAmount);
             Controls.Add(txtDescription);
-            Controls.Add(dtpTransaction);
             Controls.Add(btnAdd);
             Name = "SmartControlForm";
             Text = "Form2";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvTransactions).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -287,7 +291,6 @@
         private ComboBox cbTransactionType;
         private TextBox txtAmount;
         private TextBox txtDescription;
-        private DateTimePicker dtpTransaction;
         private Button btnAdd;
         private Label lblCategory;
         private Label lblAmount;
@@ -298,12 +301,13 @@
         private TextBox txtIncome;
         private TextBox txtTotalBills;
         private TextBox txtBalance;
-        private DataGridView dataGridView1;
+        private DataGridView dgvTransactions;
         private DateTimePicker dtpStartDateFilter;
         private DateTimePicker dtpEndDatePicker;
         private Button btnFilter;
         private Label lblStartDateFilter;
         private Label lblEndDateFilter;
         private Label lblLatestTransactions;
+        private Button btnCleanFilter;
     }
 }

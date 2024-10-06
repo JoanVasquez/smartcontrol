@@ -8,6 +8,7 @@ namespace SmartControl
 {
     internal interface IUser
     {
+        //Este metodo se utilizara para implementarlo en una clase para hacer el login
         public User Login(string username, string password);
     }
 }
