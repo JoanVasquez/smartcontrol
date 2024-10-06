@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SmartControl")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d3a20a4c3c23b3e867e6b7df44363646fb2e3938")]
 [assembly: System.Reflection.AssemblyProductAttribute("SmartControl")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SmartControl")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

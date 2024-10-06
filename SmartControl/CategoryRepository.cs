@@ -11,7 +11,7 @@ namespace SmartControl
     internal class CategoryRepository : IRepository<Category>
     {
         private DBConnection connection = new DBConnection();
-        private string allCategoryQuery = "SELECT * FROM categories";
+        private string allCategoryQuery = "SELECT * FROM categorias";
         private MySqlDataReader dataReader;
         private MySqlCommand command;
 

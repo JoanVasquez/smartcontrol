@@ -11,20 +11,15 @@ namespace SmartControl
     {
         public int Id { get; set; }
         public DateTime Date { get; set; }
-        public string Type { get; set; }
-        public Category Category { get; set; }
         public decimal Amount { get; set; }
-        public string PaymentType { get; set; }
+        public string TransactionType { get; set; }
         public string Description { get; set; }
 
-        public Transaction(int id, DateTime date, string type, Category category, decimal amount, string paymentType, string description)
+        public Transaction(DateTime date, decimal amount, string transactionType, string description)
         {
-            Id = id;
             Date = date;
-            Type = type;
-            Category = category;
             Amount = amount;
-            PaymentType = paymentType;
+            TransactionType = transactionType;
             Description = description;
         }
     }

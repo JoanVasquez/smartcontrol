@@ -29,9 +29,8 @@
         private void InitializeComponent()
         {
             lblTransactionType = new Label();
-            cbTransactionType = new ComboBox();
             cbCategory = new ComboBox();
-            cbPaymentType = new ComboBox();
+            cbTransactionType = new ComboBox();
             txtAmount = new TextBox();
             txtDescription = new TextBox();
             dtpTransaction = new DateTimePicker();
@@ -64,13 +63,6 @@
             lblTransactionType.TabIndex = 0;
             lblTransactionType.Text = "Tipo de transaccion";
             // 
-            // cbTransactionType
-            // 
-            cbTransactionType.Location = new Point(20, 20);
-            cbTransactionType.Name = "cbTransactionType";
-            cbTransactionType.Size = new Size(200, 23);
-            cbTransactionType.TabIndex = 0;
-            // 
             // cbCategory
             // 
             cbCategory.Location = new Point(143, 49);
@@ -78,12 +70,14 @@
             cbCategory.Size = new Size(200, 23);
             cbCategory.TabIndex = 1;
             // 
-            // cbPaymentType
+            // cbTransactionType
             // 
-            cbPaymentType.Location = new Point(143, 9);
-            cbPaymentType.Name = "cbPaymentType";
-            cbPaymentType.Size = new Size(200, 23);
-            cbPaymentType.TabIndex = 2;
+            cbTransactionType.Items.AddRange(new object[] { "Ingreso", "Gasto", "Transacción Bancaria" });
+            cbTransactionType.Location = new Point(143, 9);
+            cbTransactionType.Name = "cbTransactionType";
+            cbTransactionType.Size = new Size(200, 23);
+            cbTransactionType.TabIndex = 2;
+            cbTransactionType.SelectedIndexChanged += cbTransactionType_SelectedIndexChanged;
             // 
             // txtAmount
             // 
@@ -113,6 +107,7 @@
             btnAdd.Size = new Size(200, 30);
             btnAdd.TabIndex = 6;
             btnAdd.Text = "Agregar";
+            btnAdd.Click += btnAdd_Click;
             // 
             // lblCategory
             // 
@@ -273,7 +268,7 @@
             Controls.Add(lblCategory);
             Controls.Add(lblTransactionType);
             Controls.Add(cbCategory);
-            Controls.Add(cbPaymentType);
+            Controls.Add(cbTransactionType);
             Controls.Add(txtAmount);
             Controls.Add(txtDescription);
             Controls.Add(dtpTransaction);
@@ -288,9 +283,8 @@
         #endregion
 
         private Label lblTransactionType;
-        private ComboBox cbTransactionType;
         private ComboBox cbCategory;
-        private ComboBox cbPaymentType;
+        private ComboBox cbTransactionType;
         private TextBox txtAmount;
         private TextBox txtDescription;
         private DateTimePicker dtpTransaction;
